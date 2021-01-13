@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 #0 - Sell
 #1 - Buy
 #2 - Hold
+#Returns: count stock history, model amount history and buy and hold amount history
 
 def financialEvaluation(prices, actions, brokerage, amount, defaultCount):
     brokerage = 0
@@ -35,7 +36,7 @@ def financialEvaluation(prices, actions, brokerage, amount, defaultCount):
              actualAmount = bhCount * prices[i]
              historyBH.append(round(actualAmount + leftoverBH, 2))
             
-        #MCNN-TC evaluation
+        #Model evaluation
         if(actions[i] == 1):      #Buy
             if(actualCount == 0):
                 amount = amount - brokerage
